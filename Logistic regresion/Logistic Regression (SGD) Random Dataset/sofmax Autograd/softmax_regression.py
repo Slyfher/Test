@@ -40,7 +40,7 @@ timeGraNum = []
 timeAutograd= []
 addL2Norm = []
 
-for k in range(20):
+for k in range(3):
 
 	# Optimize weights using gradient descent.
 	t2=time.clock()

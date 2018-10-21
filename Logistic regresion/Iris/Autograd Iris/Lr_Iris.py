@@ -2,7 +2,7 @@ import autograd.numpy as np
 from autograd import grad
 import timeit
 import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.datasets import load_iris
@@ -13,7 +13,7 @@ iris = load_iris()
 # Get input and output matrix
 X = iris.data  # we only take the first two features.
 y = iris.target
-IT = 1000
+IT = 10000
 K = 20
 text = 'Test'+str(IT)
 
@@ -34,7 +34,7 @@ def Sigmoid(z):
 
 # Plot the Sigmoid
 x = np.arange(-5, 5, 0.1)
-plt.plot(x, Sigmoid(x))
+#plt.plot(x, Sigmoid(x))
 
 
 # Logistic regression model

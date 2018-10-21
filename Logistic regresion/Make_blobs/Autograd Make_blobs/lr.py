@@ -8,9 +8,9 @@ from sklearn.datasets.samples_generator import make_blobs
 
 
 
-N = 1000
-IT = 1000
-K = 20
+N = 500
+IT = 10000
+K = 5
 text = 'Test'+str(N)+str(IT)
 
 # Load a simple dataset

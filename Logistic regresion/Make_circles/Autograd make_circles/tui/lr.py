@@ -1,20 +1,19 @@
 import autograd.numpy as np
 from autograd import grad
-import pandas as pd
 import timeit
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.datasets import make_moons 
-
+from sklearn.datasets import make_circles 
 
 N = 300000
 IT = 1000
-K = 3
+K = 5
 text = 'Test'+str(N)+str(IT)
 
 # Load a simple dataset
 
-X, y = make_moons(N, noise=0.1)
+X, y = make_circles(N, noise=0.1)
 
 # Normalize the input features
 X = MinMaxScaler(feature_range=(-1,1)).fit_transform(X)
@@ -59,7 +58,7 @@ iters = IT
 # Debug values
 loss = np.zeros(iters)
 acc = np.zeros(iters)
-time = 0.0
+time = np.zeros(iters)
 alpha = 0.01
 result = 0.0
 n=[]
@@ -76,7 +75,7 @@ print "#Logistic Regression with Autograd"
 print " "
 print "#Parameters:"
 print " "
-print "#Dataset: make_moons"
+print "#Dataset: make_circles"
 print "#Training examples:",len(X_train)
 print "#Features:", len(w)
 print "#learning rate:", alpha
@@ -84,13 +83,10 @@ print "#N Itertations:", iters
 print "N Repeat:", K
 
 
-
 print "#Train:"
 print " "
 print "#Stochastic gradient descent:"
 print " "
-
-
 
 for k in range(K):
 	start = timeit.default_timer()

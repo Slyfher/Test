@@ -1,6 +1,6 @@
 import autograd.numpy as np
 from autograd import grad
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.datasets import load_wine
@@ -8,7 +8,7 @@ import pandas as pd
 import timeit
 wine = load_wine()
 
-IT = 1000
+IT = 10000
 K = 20
 text = 'Test'+str(IT)
 
@@ -34,7 +34,7 @@ def Sigmoid(z):
 
 # Plot the Sigmoid
 x = np.arange(-5, 5, 0.1)
-plt.plot(x, Sigmoid(x))
+#plt.plot(x, Sigmoid(x))
 
 
 # Logistic regression model
