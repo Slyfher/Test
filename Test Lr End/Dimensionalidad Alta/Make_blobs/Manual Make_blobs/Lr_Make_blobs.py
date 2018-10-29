@@ -13,7 +13,7 @@ IT= 10000
 K= 20
 text = 'Test'+str(N)+str(IT)
 
-(X,y) =  make_blobs(n_samples=N,n_features=2,centers=2,cluster_std=1.05,random_state=20)
+(X,y) =  make_blobs(n_samples=N,n_features=10,centers=2,cluster_std=1.05,random_state=20)
 
 
 X = MinMaxScaler(feature_range=(-1,1)).fit_transform(X)

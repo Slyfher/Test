@@ -13,7 +13,7 @@ IT= 10000
 K= 10
 text = 'Test'+str(N)+str(IT)
 
-X, y = make_circles(N, noise=0.1)
+X, y = make_circles(N, noise=0.5)
 
 X = MinMaxScaler(feature_range=(-1,1)).fit_transform(X)
 
