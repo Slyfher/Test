@@ -8,8 +8,9 @@ tool = []
 r = []
 t = []
 
+tex= 'Gibbs-DuhemAD'
 
-A12, A21 = 2.04, 1.5461  # Acetone/water https://en.wikipedia.org/wiki/Margules_activity_model
+A12, A21 = 2.04, 1.5461  
 x, y = 1.0, 2.0
 
 def GexRT(x, y):
@@ -68,7 +69,12 @@ t.append(result)
 print " "
 print "Sumary"
 print " "
+writer = pd.ExcelWriter(tex+'.xlsx', engine='xlsxwriter')
 data_insertion={'A_Funtion':'Gibbs-Duhem','B_Tool':tool,'D_Diff':text,'E_Result':r,'F_Time':t}
 df=pd.DataFrame(data_insertion)
+df.to_excel(writer, sheet_name='Sumary')
+writer.save()
+
+
 
 print df

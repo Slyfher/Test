@@ -7,7 +7,7 @@ text = []
 r = []
 t = []
 
-
+tex= 'ackleyAD'
 
 def ackley(x, y): return -20*exp(-0.2*sqrt(0.5*(x**2+y**2)))-exp(0.5*(cos(2*pi*x)+(cos(2*pi*y))))+exp(1)+20
 
@@ -33,7 +33,11 @@ t.append(result)
 print " "
 print "Sumary"
 print " "
+writer = pd.ExcelWriter(tex+'.xlsx', engine='xlsxwriter')
 data_insertion={'A_Funtion':'Ackley','B_Tool':'AD','D_Diff':text,'E_Result':r,'F_Time':t}
 df=pd.DataFrame(data_insertion)
+df.to_excel(writer, sheet_name='Sumary')
+writer.save()
+
 
 print df

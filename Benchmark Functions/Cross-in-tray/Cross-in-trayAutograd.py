@@ -7,6 +7,8 @@ text = []
 r = []
 t = []
 
+tex= 'CrosstrayAutograd'
+
 def Crosstray(x, y): return -0.0001*(np.absolute(np.sin(x)*np.sin(y)*np.exp(np.absolute(100-(np.sqrt(x**2+y**2)/np.pi))))+1)**0.1
 
 
@@ -28,8 +30,13 @@ t.append(result)
 print " "
 print "Sumary"
 print " "
+writer = pd.ExcelWriter(tex+'.xlsx', engine='xlsxwriter')
 data_insertion={'A_Funtion':'Cross in tray','B_Tool':'Autograd','D_Diff':text,'E_Result':r,'F_Time':t}
 df=pd.DataFrame(data_insertion)
+df.to_excel(writer, sheet_name='Sumary')
+writer.save()
+
+
 
 print df
 
