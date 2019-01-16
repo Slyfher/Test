@@ -7,8 +7,13 @@ import datetime
 import pandas as pd
 import timeit
 import xlsxwriter
+import  logging
+logging.getLogger("pystan").propagate=False
+logging.getLogger("stan").propagate=False
+logging.getLogger("numpy").propagate=False
+logging.getLogger("sklearn").propagate=False
 
-iterations=50000 #iterations of algorithm
+iterations=10000 #iterations of algorithm
 K = 1 #times to run each algorithm
 
 text = 'test_iter_'+str(iterations) #name prefix of output file
