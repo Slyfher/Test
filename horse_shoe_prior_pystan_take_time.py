@@ -9,7 +9,7 @@ import timeit
 import xlsxwriter
 
 iterations=50000 #iterations of algorithm
-K = 10 #times to run each algorithm
+K = 1 #times to run each algorithm
 
 text = 'test_iter_'+str(iterations) #name prefix of output file
 
